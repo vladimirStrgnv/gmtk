@@ -168,22 +168,42 @@ MonoBehaviour:
     color: {r: 0, g: 0, b: 0, a: 0}
     sceneName: TitleScreen
     roundTime: 0
-  - instructionText: Dodge
-    color: {r: 0, g: 0.638464, b: 1, a: 1}
-    sceneName: FirstLevel
-    roundTime: 5
   - instructionText: Kill
+    color: {r: 0, g: 1, b: 0.27296638, a: 1}
+    sceneName: SpiderGame
+    roundTime: 10
+  - instructionText: Dodge
     color: {r: 0.17132434, g: 0.6603774, b: 0.18317759, a: 1}
     sceneName: SecondLevel
-    roundTime: 5
-  - instructionText: Run
+    roundTime: 10
+  - instructionText: Don't hit
     color: {r: 0.56164545, g: 0.6226415, b: 0.26139194, a: 1}
     sceneName: ThirdLevel
+    roundTime: 10
+  - instructionText: Kill
+    color: {r: 0.6603774, g: 0.2739758, b: 0.04049486, a: 1}
+    sceneName: SpiderGame
     roundTime: 5
-  - instructionText: Outrun
+  - instructionText: Dodge
     color: {r: 0.6603774, g: 0.2739758, b: 0.04049486, a: 1}
     sceneName: ForthLevel
-    roundTime: 10
+    roundTime: 5
+  - instructionText: Don't hit
+    color: {r: 0.6603774, g: 0.2739758, b: 0.04049486, a: 1}
+    sceneName: ForthLevel
+    roundTime: 5
+  - instructionText: Kill
+    color: {r: 0.65882355, g: 0.07381115, b: 0.039215695, a: 1}
+    sceneName: SpiderGameKnife
+    roundTime: 5
+  - instructionText: Smash
+    color: {r: 0.6603774, g: 0.2739758, b: 0.04049486, a: 1}
+    sceneName: ForthLevel
+    roundTime: 5
+  - instructionText: Hit
+    color: {r: 0.6603774, g: 0.2739758, b: 0.04049486, a: 1}
+    sceneName: ForthLevel
+    roundTime: 5
 --- !u!1 &164201622
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,7 +933,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 14, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1457759110
@@ -936,7 +956,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Title
+  m_text: Use WASD and E
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1002,7 +1022,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -164.93552, y: 0, z: -140.06158, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

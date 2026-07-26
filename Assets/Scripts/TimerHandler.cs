@@ -58,6 +58,6 @@ public class TimerHandler : MonoBehaviour
 
     void OnDestroy()
     {
-        StopAllCoroutines();
+        CancelInvoke();
     }
 }
