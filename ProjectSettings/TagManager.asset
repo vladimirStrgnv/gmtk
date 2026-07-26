@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Car
   - Runner
+  - Rock
+  - Ground
   layers:
   - Default
   - TransparentFX
