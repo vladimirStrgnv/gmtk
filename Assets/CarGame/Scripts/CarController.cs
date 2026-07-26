@@ -1,6 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+public enum GameModes
+{
+    Dodge,
+    Smash,
+
+}
+
 public class CarControl : MonoBehaviour
 {
     [Header("Car Properties")]
@@ -11,9 +19,15 @@ public class CarControl : MonoBehaviour
     public float steeringRangeAtMaxSpeed = 10f;
     public float centreOfGravityOffset = -1f;
 
+    public int smashCounts = 0;
+    public int smashCountsToWin = 4;
+
     private WheelControl[] wheels;
     private Rigidbody rigidBody;
-    
+
+    [SerializeField] GameModes gameMode;
+
+
     [Header("Input Actions")]
     public InputActionReference moveAction;
 
@@ -27,41 +41,43 @@ public class CarControl : MonoBehaviour
         moveAction.action.Disable();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         rigidBody = GetComponent<Rigidbody>();
 
-        // Adjust center of mass to improve stability and prevent rolling
         Vector3 centerOfMass = rigidBody.centerOfMass;
         centerOfMass.y += centreOfGravityOffset;
         rigidBody.centerOfMass = centerOfMass;
 
-        // Get all wheel components attached to the car
         wheels = GetComponentsInChildren<WheelControl>();
     }
 
-    // FixedUpdate is called at a fixed time interval 
+    void Update()
+    {
+        if (gameMode == GameModes.Smash)
+        {
+            if (smashCountsToWin == smashCounts)
+            {
+                Debug.Log("WIN");
+            }
+        }
+    }
+
     void FixedUpdate()
     {
-        // Get player input for acceleration and steering
-        float vInput = moveAction.action.ReadValue<Vector2>().y; // Forward/backward input
-        float hInput = moveAction.action.ReadValue<Vector2>().x; // Steering input
+        float vInput = moveAction.action.ReadValue<Vector2>().y;
+        float hInput = moveAction.action.ReadValue<Vector2>().x;
 
-        // Calculate current speed along the car's forward axis
         float forwardSpeed = Vector3.Dot(transform.forward, rigidBody.linearVelocity);
-        float speedFactor = Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed)); // Normalized speed factor
+        float speedFactor = Mathf.InverseLerp(0, maxSpeed, Mathf.Abs(forwardSpeed));
 
-        // Reduce motor torque and steering at high speeds for better handling
         float currentMotorTorque = Mathf.Lerp(motorTorque, 0, speedFactor);
         float currentSteerRange = Mathf.Lerp(steeringRange, steeringRangeAtMaxSpeed, speedFactor);
 
-        // Determine if the player is accelerating or trying to reverse
         bool isAccelerating = Mathf.Sign(vInput) == Mathf.Sign(forwardSpeed);
 
         foreach (var wheel in wheels)
         {
-            // Apply steering to wheels that support steering
             if (wheel.steerable)
             {
                 wheel.WheelCollider.steerAngle = hInput * currentSteerRange;
@@ -69,20 +85,23 @@ public class CarControl : MonoBehaviour
 
             if (isAccelerating)
             {
-                // Apply torque to motorized wheels
                 if (wheel.motorized)
                 {
                     wheel.WheelCollider.motorTorque = vInput * currentMotorTorque;
                 }
-                // Release brakes when accelerating
                 wheel.WheelCollider.brakeTorque = 0f;
             }
             else
             {
-                // Apply brakes when reversing direction
                 wheel.WheelCollider.motorTorque = 0f;
                 wheel.WheelCollider.brakeTorque = Mathf.Abs(vInput) * brakeTorque;
             }
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        
+    }
+
 }
