@@ -11,6 +11,7 @@ public class InstructionHandler : MonoBehaviour
     private Image background;
 
     private TextMeshProUGUI instructionText;
+    private TextMeshProUGUI livesText;
 
     void Start()
     {
@@ -19,9 +20,11 @@ public class InstructionHandler : MonoBehaviour
 
         background = transform.Find("Background").GetComponent<Image>();
         instructionText = transform.Find("Instruction").GetComponent<TextMeshProUGUI>();
+        livesText = transform.Find("Lives").GetComponent<TextMeshProUGUI>();
 
         background.color = sceneChanger.levelDictionary[playerState.currentLevel + 1].color;
         instructionText.text = sceneChanger.levelDictionary[playerState.currentLevel + 1].instructionText;
+        livesText.text = "Lives:" + playerState.currentLives.ToString();
 
         sceneChanger.Invoke("GoToNextScene", 2);
     }

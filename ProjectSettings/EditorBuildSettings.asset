@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ForthLevel.unity
     guid: 653299363cbf6c246b74d8948cb7f93e
+  - enabled: 1
+    path: Assets/Scenes/SpiderGame.unity
+    guid: ce4500436424bd441ba0569d21ae390c
+  - enabled: 1
+    path: Assets/Scenes/SpiderGameKnife.unity
+    guid: 18d0b356b3a9bf945bf3fb1a0337fbe5
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
