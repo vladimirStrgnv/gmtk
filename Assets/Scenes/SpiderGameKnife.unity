@@ -412,6 +412,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1409764518}
+    - target: {fileID: 3834161385617562967, guid: ee96d6a43fd95b142b84a83799f1652c, type: 3}
+      propertyPath: isRunoutAFail
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5948067659423298095, guid: ee96d6a43fd95b142b84a83799f1652c, type: 3}
       propertyPath: m_Name
       value: TimerUI

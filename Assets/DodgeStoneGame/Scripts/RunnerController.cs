@@ -15,11 +15,19 @@ public class RunnerController : MonoBehaviour
     AudioSource source;
     public AudioClip clip;
 
+    private PlayerState playerState;
+    private ChangeScene sceneChanger;
+
+
     void Start()
     {
         moveAction.Enable();
         anim = GetComponent<Animator>();
         source = GetComponent<AudioSource>();
+
+        playerState = GameObject.Find("PlayerState").GetComponent<PlayerState>();
+        sceneChanger = GameObject.Find("SceneManager").GetComponent<ChangeScene>();
+
 
     }
 
@@ -43,6 +51,8 @@ public class RunnerController : MonoBehaviour
             anim.SetBool("death", true);
             source.PlayOneShot(clip);
 
+            playerState.DecreaseLives();
+            sceneChanger.GoToInstructionsScreen();
 
         }
     }

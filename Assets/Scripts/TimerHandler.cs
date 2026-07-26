@@ -9,6 +9,8 @@ public class TimerHandler : MonoBehaviour
 
     private TextMeshProUGUI timerText;
 
+    public bool isRunoutAFail = false;
+
 
     private int remainingTime;
     private int roundTime;
@@ -50,7 +52,11 @@ public class TimerHandler : MonoBehaviour
 
     private void RunOutOfTime()
     {
-        playerState.DecreaseLives();
+        if (isRunoutAFail)
+        {
+            playerState.DecreaseLives();
+        }
+
         sceneChanger.GoToInstructionsScreen();
     }
 

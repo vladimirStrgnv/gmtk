@@ -25,6 +25,11 @@ public class CarControl : MonoBehaviour
     private WheelControl[] wheels;
     private Rigidbody rigidBody;
 
+    private PlayerState playerState;
+    private ChangeScene sceneChanger;
+
+    private bool isOver = false;
+
     [SerializeField] GameModes gameMode;
 
 
@@ -50,15 +55,20 @@ public class CarControl : MonoBehaviour
         rigidBody.centerOfMass = centerOfMass;
 
         wheels = GetComponentsInChildren<WheelControl>();
+
+        playerState = GameObject.Find("PlayerState").GetComponent<PlayerState>();
+        sceneChanger = GameObject.Find("SceneManager").GetComponent<ChangeScene>();
+
     }
 
     void Update()
     {
         if (gameMode == GameModes.Smash)
         {
-            if (smashCountsToWin == smashCounts)
+            if (smashCountsToWin == smashCounts && !isOver)
             {
-                Debug.Log("WIN");
+                sceneChanger.GoToInstructionsScreen();
+                isOver = true;
             }
         }
     }
@@ -101,7 +111,14 @@ public class CarControl : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        
+        if (gameMode == GameModes.Dodge && collision.gameObject.tag == "Runner")
+        {
+            playerState.DecreaseLives();
+            sceneChanger.GoToInstructionsScreen();
+            return;
+        }
+
+
     }
 
 }

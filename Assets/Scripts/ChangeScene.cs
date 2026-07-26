@@ -36,6 +36,12 @@ public class ChangeScene : MonoBehaviour
 
     public void GoToInstructionsScreen()
     {
+        if (playerState.currentLives == 0 || playerState.currentLevel > levelDictionary.Length)
+        {
+            playerState.ResetLevel();
+            StartCoroutine(LoadInScene("TitleScreen"));
+            return;
+        }
         StartCoroutine(LoadInScene("InstructionScreen"));
     }
 

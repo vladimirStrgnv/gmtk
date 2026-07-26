@@ -174,36 +174,36 @@ MonoBehaviour:
     roundTime: 10
   - instructionText: Dodge
     color: {r: 0.17132434, g: 0.6603774, b: 0.18317759, a: 1}
-    sceneName: SecondLevel
+    sceneName: Rock_game_1
     roundTime: 10
   - instructionText: Don't hit
-    color: {r: 0.56164545, g: 0.6226415, b: 0.26139194, a: 1}
-    sceneName: ThirdLevel
+    color: {r: 0.34336245, g: 0.62352943, b: 0.2627451, a: 1}
+    sceneName: CarGame
     roundTime: 10
   - instructionText: Kill
-    color: {r: 0.6603774, g: 0.2739758, b: 0.04049486, a: 1}
+    color: {r: 0.54592353, g: 0.6698113, b: 0.022116425, a: 1}
     sceneName: SpiderGame
-    roundTime: 5
+    roundTime: 7
   - instructionText: Dodge
-    color: {r: 0.6603774, g: 0.2739758, b: 0.04049486, a: 1}
-    sceneName: ForthLevel
-    roundTime: 5
+    color: {r: 0.65882355, g: 0.62285566, b: 0.039215695, a: 1}
+    sceneName: Rock_game_2
+    roundTime: 7
   - instructionText: Don't hit
-    color: {r: 0.6603774, g: 0.2739758, b: 0.04049486, a: 1}
-    sceneName: ForthLevel
-    roundTime: 5
+    color: {r: 0.65882355, g: 0.42056623, b: 0.039215695, a: 1}
+    sceneName: CarGame_2
+    roundTime: 7
   - instructionText: Kill
     color: {r: 0.65882355, g: 0.07381115, b: 0.039215695, a: 1}
     sceneName: SpiderGameKnife
-    roundTime: 5
+    roundTime: 7
   - instructionText: Smash
-    color: {r: 0.6603774, g: 0.2739758, b: 0.04049486, a: 1}
-    sceneName: ForthLevel
-    roundTime: 5
+    color: {r: 0.65882355, g: 0.09004821, b: 0.039215695, a: 1}
+    sceneName: Rock_game_3
+    roundTime: 7
   - instructionText: Hit
-    color: {r: 0.6603774, g: 0.2739758, b: 0.04049486, a: 1}
-    sceneName: ForthLevel
-    roundTime: 5
+    color: {r: 0.5754717, g: 0.21853356, b: 0, a: 1}
+    sceneName: CarGame_3
+    roundTime: 10
 --- !u!1 &164201622
 GameObject:
   m_ObjectHideFlags: 0

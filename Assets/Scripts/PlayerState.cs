@@ -20,6 +20,12 @@ public class PlayerState : MonoBehaviour
         currentLevel++;
     }
 
+    public void ResetLevel()
+    {
+        currentLevel = 0;
+        currentLives = maxLives;
+    }
+
     public void DecreaseLives()
     {
         currentLives--;

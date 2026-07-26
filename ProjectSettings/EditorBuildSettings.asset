@@ -29,6 +29,24 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SpiderGameKnife.unity
     guid: 18d0b356b3a9bf945bf3fb1a0337fbe5
+  - enabled: 1
+    path: Assets/Scenes/CarGame.unity
+    guid: 22583ee1ee8d5ad4f95bb95d6c1e078a
+  - enabled: 1
+    path: Assets/Scenes/CarGame_2.unity
+    guid: 7de7c8ff2ed7b13429be621afeb7dfa3
+  - enabled: 1
+    path: Assets/Scenes/CarGame_3.unity
+    guid: a3894127314f9754db73f9186d1124fd
+  - enabled: 1
+    path: Assets/Scenes/Rock_game_1.unity
+    guid: dc8c9f3efd746429fa6f9482dc779492
+  - enabled: 1
+    path: Assets/Scenes/Rock_game_2.unity
+    guid: 5bff353db9314d944986c5d5d13137ac
+  - enabled: 1
+    path: Assets/Scenes/Rock_game_3.unity
+    guid: 12ef1808009e4084cb402ede98d3fcf0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -14,6 +14,8 @@ public class RockController : MonoBehaviour
     private Animator anim;
     private bool alive = true;
 
+    private ChangeScene sceneChanger;
+
     AudioSource source;
     public AudioClip clip;
 
@@ -22,6 +24,8 @@ public class RockController : MonoBehaviour
         moveAction.Enable();
         anim = GetComponent<Animator>();
         source = GetComponent<AudioSource>();
+
+        sceneChanger = GameObject.Find("SceneManager").GetComponent<ChangeScene>();
 
     }
 
@@ -76,11 +80,10 @@ public class RockController : MonoBehaviour
 
         }
 
-        if (other.gameObject.CompareTag("Runner") )
+        if (other.gameObject.CompareTag("Runner"))
         {
-            Debug.Log(1);
 
-
+            sceneChanger.GoToInstructionsScreen();
         }
     }
 
