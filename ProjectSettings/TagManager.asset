@@ -4,6 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - Car
+  - Runner
+  - Rock
+  - Ground
   - Target
   layers:
   - Default
